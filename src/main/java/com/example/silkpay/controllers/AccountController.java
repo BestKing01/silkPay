@@ -15,19 +15,15 @@ import java.util.Optional;
 public class AccountController {
     @Autowired
     private AccountServiceImpl accountService;
-
-
-
-    @PostMapping("/createAcc")
-    public ResponseEntity<Account> createAccount(@RequestBody Account account) {
-        Account createdAccount = accountService.createAccount(account);
-        return ResponseEntity.ok(createdAccount);
-    }
-
     @GetMapping("/")
     public ResponseEntity<List<Account>> allAccount(){
         List<Account> accounts = accountService.allAccount();
         return ResponseEntity.ok(accounts);
+    }
+    @PostMapping("/createAcc")
+    public ResponseEntity<Account> createAccount(@RequestBody Account account) {
+        Account createdAccount = accountService.createAccount(account);
+        return ResponseEntity.ok(createdAccount);
     }
 
     @GetMapping("/{accountId}")
@@ -35,13 +31,11 @@ public class AccountController {
         Optional<Account> account = accountService.getAccountById(accountId);
         return ResponseEntity.ok(account);
     }
-
     @GetMapping("/balance/{accountNumber}")
     public ResponseEntity<BigDecimal> getAccountBalanceByNumber(@PathVariable String accountNumber){
         BigDecimal account = accountService.getAccountBalanceByNumber(accountNumber);
         return ResponseEntity.ok(account);
     }
-
     @PostMapping("/{sourceAccountId}/transfer/{targetAccountId}")
     public ResponseEntity<String> transferFunds(
             @PathVariable Long sourceAccountId,
@@ -51,7 +45,4 @@ public class AccountController {
         accountService.transferFunds(sourceAccountId, targetAccountId, amount);
         return ResponseEntity.ok("Funds transferred successfully");
     }
-
-
-
 }

@@ -11,11 +11,8 @@ import java.util.Optional;
 public interface AccountService {
     public List<Account> allAccount();
     public Account createAccount(Account account);
-
     public Optional<Account> getAccountById(Long accountId);
 
     public BigDecimal getAccountBalanceByNumber(String accountNumber);
-
-    @Transactional
     public void transferFunds(Long sourceAccountId, Long targetAccountId, BigDecimal amount);
 }
