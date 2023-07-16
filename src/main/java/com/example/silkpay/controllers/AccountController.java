@@ -1,22 +1,21 @@
 package com.example.silkpay.controllers;
 
 import com.example.silkpay.model.Account;
-import com.example.silkpay.service.AccountService;
+import com.example.silkpay.service.impl.AccountServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/accounts")
 public class AccountController {
-    private final AccountService accountService;
+    @Autowired
+    private AccountServiceImpl accountService;
 
-    public AccountController(AccountService accountService) {
-        this.accountService = accountService;
-    }
 
 
     @PostMapping("/createAcc")
@@ -32,8 +31,8 @@ public class AccountController {
     }
 
     @GetMapping("/{accountId}")
-    public ResponseEntity<Account> getAccountId(@PathVariable Long accountId) {
-        Account account = accountService.getAccountById(accountId);
+    public ResponseEntity<Optional<Account>> getAccountId(@PathVariable Long accountId) {
+        Optional<Account> account = accountService.getAccountById(accountId);
         return ResponseEntity.ok(account);
     }
 
