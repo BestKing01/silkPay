@@ -1,4 +1,4 @@
-!silkPay
+#SilkPay test project 
 В этом проекте учитывались все основные требования как:
 1.1. Разработка должна быть выполнена на языке Java с использованием Spring Boot.
 1.2. Должна быть реализована база данных (можно использовать in-memory базу
@@ -15,17 +15,16 @@
 
 Как запутите нужен будет постман где будем проверять работает ли наши запросы.
 
-http://localhost:8001/accounts/
-Показывает все аккаунты с id, accountNumber, balance
-
+1.http://localhost:8001/accounts
+###как запускаем код открываем постман указываем этот url: http://localhost:8001/accounts get запросом чтобы вывел все аккаунты со всеми данными
 http://localhost:8001/accounts/1
 поиск по id
     Показывает аккаунт с id = 1
 
-http://localhost:8001/accounts/balance/000-003
+2.http://localhost:8001/accounts/balance/000-003
 поиск аккаунта по accountNumber
 
-http://localhost:8001/accounts/createAcc
+3.http://localhost:8001/accounts/createAcc
 Создание нового счета (с возможностью указать начальный баланс)
 
 
@@ -35,5 +34,5 @@ http://localhost:8001/accounts/createAcc
     "balance": 333333.00
 }
 
-http://localhost:8001/accounts/1/transfer/2?amount=100.00
+4.http://localhost:8001/accounts/1/transfer/2?amount=100.00
 Перевод денежных средств между счетами
