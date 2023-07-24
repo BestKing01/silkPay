@@ -1,8 +1,8 @@
-package com.example.silkpay;
+package kz.temirbayev.silkpay;
 
-import com.example.silkpay.controllers.AccountController;
-import com.example.silkpay.model.Account;
-import com.example.silkpay.service.AccountService;
+import kz.temirbayev.silkpay.controllers.AccountController;
+import kz.temirbayev.silkpay.model.Account;
+import kz.temirbayev.silkpay.service.AccountService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

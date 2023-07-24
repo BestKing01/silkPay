@@ -1,4 +1,4 @@
-package com.example.silkpay;
+package kz.temirbayev.silkpay;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

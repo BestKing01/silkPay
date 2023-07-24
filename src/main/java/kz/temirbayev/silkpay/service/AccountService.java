@@ -1,6 +1,6 @@
-package com.example.silkpay.service;
+package kz.temirbayev.silkpay.service;
 
-import com.example.silkpay.model.Account;
+import kz.temirbayev.silkpay.model.Account;
 
 import java.math.BigDecimal;
 import java.util.List;

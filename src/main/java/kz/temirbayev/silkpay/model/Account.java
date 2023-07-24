@@ -1,10 +1,8 @@
-package com.example.silkpay.model;
+package kz.temirbayev.silkpay.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.math.BigDecimal;
-
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,4 +18,5 @@ public class Account {
     private String accountNumber;
     @Column(name = "balance")
     private BigDecimal balance;
+
 }
